@@ -1,0 +1,36 @@
+<p>Thank you for your order placed confirm</p>
+
+  <table class="table table-striped" id="invoice">
+    <thead>
+      <tr>
+        <th scope="col" sortable="name">Name</th>
+        <th scope="col" sortable="area">DESCRIPTION</th>
+        <th scope="col" sortable="population">ACTUAL PRICE</th>
+        <th scope="col" sortable="population">OFFER PRICE</th>
+        <th scope="col" sortable="population">PRICE</th>
+        <th scope="col" sortable="population">QUANTITY</th>
+        <th scope="col" sortable="population">TOTAL PRICE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let order of orders">
+        <td>{{ order.name }}</td>
+        <td>{{ order.description }}</td>
+        <td>{{ order.actualprice }}</td>
+        <td>{{ order.offerprice }}</td>
+        <td>{{ order.price }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.totalprice }}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Total</td>
+        <td>{{ totalamount }}</td>
+      </tr>
+    </tbody>
+  </table>

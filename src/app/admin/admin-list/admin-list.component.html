@@ -1,0 +1,21 @@
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" sortable="name">Order ID</th>
+        <th scope="col" sortable="population">Name</th>
+        <th scope="col" sortable="area">Address</th>
+        <th scope="col" sortable="population">Email</th>
+        <th scope="col" sortable="population">Mobile Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let order of orders">
+		<td> {{order.orderid}}</td>
+        <td>{{order.name}}</td>
+       <td> {{order.address}}</td>
+       <td> {{order.emailid}}</td>
+       <td>{{order.mobilenumber}}</td>
+      </tr>
+    </tbody>
+  </table>

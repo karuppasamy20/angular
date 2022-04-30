@@ -1,0 +1,10 @@
+.mat-card-image {
+	margin-top:0px !important;
+}
+
+.example-card {
+	overflow-y: scroll;
+    height: -moz-calc(70% - (20px + 30px));
+    height: -webkit-calc(70% - (20px + 30px));
+    height: calc(70% - (20px + 30px));
+}

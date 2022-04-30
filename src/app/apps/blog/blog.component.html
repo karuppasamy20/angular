@@ -1,0 +1,90 @@
+<div
+  class="static-slider-head"
+  style="background-image: url(assets/images/blog/homescreen.jpg)"
+>
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-lg-9 col-md-6 align-self-center text-center no-trans">
+        <h1 class="title">Online Crackers</h1>
+        <h3 class="subtitle op-5">
+          We are selling the good quality crackers with low price.  
+          We have deliver the all over India with minimum delivery fee
+        </h3>
+
+        <a
+          href="#sectionId"
+          class="btn btn-md m-t-30 btn-success-gradiant font-14"
+          >Order Now</a>
+      </div>
+      <!-- Column -->
+    </div>
+  </div>
+</div>
+
+<!-- Row  -->
+<div class="container spacer" id="sectionId">
+  <div class="row justify-content-center">
+    <!-- Column -->
+    <div class="col-md-8 no-trans text-center">
+      <h2 class="title">Online Crackers</h2>
+      <h3 class="subtitle">
+        We are selling the good quality crackers with low price.  
+        We have deliver the all over India with minimum delivery fee
+      </h3>
+    </div>
+    <!-- Column -->
+  </div>
+  <div class="row m-t-40" #panel >
+    <!-- Column -->
+   <div class="row">
+         <div class="col-lg-3 col-md-4">
+ 			<button type="submit" class="btn btn-md btn-success-gradiant font-14" (click)="onSubmit()">Confirm Order</button>
+ 		</div>
+ 		 <div class="col-lg-6 col-md-5">
+ 		 	<table class="table table-striped">
+ 		 		<tbody>
+ 		 		<tr>
+ 		 		<td>No.of Product: {{noofproduct}} Total Amount : {{totalorderamount}} Total Discount : {{totaldiscount}}</td>
+ 		 		</tr>
+ 		 		</tbody>
+ 		 	</table>
+ 		 </div>
+ 	</div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+		<th scope="col"></th>
+        <th scope="col">ID</th>
+        <th scope="col" sortable="name">Name</th>
+        <th scope="col" sortable="area">DESCRIPTION</th>
+        <th scope="col" sortable="population">ACTUAL PRICE</th>
+        <th scope="col" sortable="population">OFFER PRICE</th>
+        <th scope="col" sortable="population">PRICE</th>
+        <th scope="col" sortable="population">QUANTITY</th>
+        <th scope="col" sortable="population">TOTAL PRICE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let cracker of crackerdetails">
+        
+       <td>
+          <img [src]="'assets/images/blog/101.jpg'" class="mr-2"
+            style="width: 20px" mat-button (click)="openDialog()">
+        </td>
+		<td>{{ cracker.id }}</td>
+        <td>{{ cracker.name }}</td>
+        <td>{{ cracker.description }}</td>
+        <td>{{ cracker.actualprice }}</td>
+        <td>{{ cracker.offerprice }}</td>
+        <td>{{ cracker.price }}</td>
+        <td> <input id="state" type="text" [(ngModel)]="cracker.quantity" (keyup)="calPrice($event,cracker)"></td> 
+        <td>{{ cracker.totalprice }}</td>
+       <!--  <td><button type="submit" class="btn btn-md btn-success" (click)="addToCard(cracker)">Add to card</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

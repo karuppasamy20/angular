@@ -1,0 +1,6 @@
+<img [src]="'assets/images/blog/101.jpg'" [hidden]="loginflag"class="mr-2"
+            style="max-width: 400px;max-height:200px" >
+<app-login [hidden]="!loginflag" (close)="onClose($event)"></app-login>            
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

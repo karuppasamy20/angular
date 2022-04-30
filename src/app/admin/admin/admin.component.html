@@ -1,0 +1,31 @@
+  <table class="table table-striped">
+    <thead>
+      <tr>
+		<th scope="col"></th>
+        <th scope="col">ID</th>
+        <th scope="col" sortable="name">Name</th>
+        <th scope="col" sortable="area">DESCRIPTION</th>
+        <th scope="col" sortable="population">ACTUAL PRICE</th>
+        <th scope="col" sortable="population">OFFER PRICE</th>
+        <th scope="col" sortable="population">PRICE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let cracker of product">
+        
+       <td>
+          <img [src]="'assets/images/blog/101.jpg'" class="mr-2"
+            style="width: 20px" mat-button >
+        </td>
+		<td>{{ cracker.id }}</td>
+        <td><input id="state" type="text" [(ngModel)]="cracker.name"></td>
+        <td><input id="state" type="text" [(ngModel)]="cracker.description"></td>
+        <td><input id="state" type="text" [(ngModel)]="cracker.actualprice"></td>
+        <td><input id="state" type="text" [(ngModel)]="cracker.offerprice"></td>
+        <td><input id="state" type="text" [(ngModel)]="cracker.price"></td>
+        <td> <input id="state" type="text" [(ngModel)]="cracker.quantity"></td> 
+       <td><button type="submit" class="btn btn-md btn-success" >Add to card</button></td> 
+      </tr>
+    </tbody>
+  </table>

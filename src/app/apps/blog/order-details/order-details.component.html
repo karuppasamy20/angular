@@ -1,0 +1,112 @@
+<div class="banner-innerpage"
+	style="background-image: url(assets/images/landingpage/banner-bg2.jpg); padding: 20px 0px 15px">
+	<div class="container">
+		<!-- Row  -->
+		<div class="row justify-content-center">
+			<!-- Column -->
+			<div class="col-lg-9 col-md-6 no-trans align-self-center text-center">
+				<h1 class="title">Order details</h1>
+			</div>
+			<!-- Column -->
+		</div>
+	</div>
+</div>
+<div class="row" style="margin-top: 20px">
+	<div class="col-lg-8 col-md-8">
+		<mat-card class="example-card">
+		<div class="row"
+			style="border-style: none none solid none; border-width: 1px; border-color: #9d9d9d;">
+			<mat-card-header> 
+				<mat-card-title>My Order ({{orderCount}})</mat-card-title>
+			</mat-card-header>
+		</div>
+		<div class="row" *ngFor="let product of ordersList;"
+			style="border-style: none none solid none; border-width: 1px; border-color: #9d9d9d; padding: 10px;">
+			<div class="col-lg-2 col-md-2">
+				<img mat-card-image
+					src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+					alt="Photo of a Shiba Inu">
+			</div>
+			<div class="col-lg-10 col-md-10">
+				<div class="row" >
+					<div class="col-lg-9 col-md-9" style="padding: 10px;"> {{product.name}}
+					</div>
+					<div class="col-lg-3 col-md-3">Delivery in 7 Days</div>
+				</div>
+				<div class="row">
+				<div class="col-lg-6 col-md-6"> 
+				DESCRIPTION :
+				</div>
+				<div class="col-lg-6 col-md-6"> 
+				{{product.description}}
+				</div>
+				</div>
+				<div class="row" >
+				<div class="col-lg-2 col-md-2"> 
+				Price :
+				</div>
+				<div class="col-lg-2 col-md-2"> 
+				{{product.price}}
+				</div>
+				<div class="col-lg-3 col-md-3"> 
+				Original Price :
+				</div>
+				<div class="col-lg-2 col-md-2"> 
+				{{product.actualprice}}
+				</div>
+				<div class="col-lg-1 col-md-1"> 
+				Offer :
+				</div>
+				<div class="col-lg-2 col-md-2"> 
+				{{product.offerprice}}
+				</div>
+				</div>
+				<mat-card-actions>
+				<button mat-raised-button>Remove</button>
+				</mat-card-actions>
+			</div>
+		</div>
+		</mat-card>
+		<div class="row">
+				<button type="submit" class="btn btn-md btn-success-gradiant font-14" (click)="publishOrder()">Confirm Order</button>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4" style="position: -webkit-sticky; /* Safari */position: sticky;top: 0;">
+	<mat-card class="example-card">
+		<div class="row"
+			style="border-style: none none solid none; border-width: 1px; border-color: #9d9d9d;">
+			<mat-card-header> 
+				<mat-card-title>PRICE DETAILS</mat-card-title>
+			</mat-card-header>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<div class="row" style="padding: 10px;">
+					<div class="col-lg-6 col-md-6" style="padding: 10px;"> Price
+					</div>
+					<div class="col-lg-6 col-md-6">{{totalorderamount}}</div>
+				</div>
+				<div class="row" style="padding: 10px;">
+					<div class="col-lg-6 col-md-6" style="padding: 10px;"> Discount
+					</div>
+					<div class="col-lg-6 col-md-6">{{totaldiscount}}</div>
+				</div>
+				<div class="row" style="padding: 10px;">
+					<div class="col-lg-6 col-md-6" style="padding: 10px;"> Delivery Charges
+					</div>
+					<div class="col-lg-6 col-md-6">Free</div>
+				</div>
+				<div class="row" style="padding: 10px;border-style: dotted none; border-width: 1px; border-color: #9d9d9d;">
+					<div class="col-lg-6 col-md-6" style="padding: 10px;"> Total Amount
+					</div>
+					<div class="col-lg-6 col-md-6">{{totalorderamount}}</div>
+				</div>
+				<div class="row" style="padding: 10px;">
+					<p>you will save {{totaldiscount}} on this price</p>
+				</div>
+
+			</div>
+		</div>
+		</mat-card>
+	</div>
+</div>
